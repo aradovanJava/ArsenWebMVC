@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Arsen Web MVC</title>
+</head>
+<body>
+Welcome to our web application!
+<table>
+  <thead>
+  <tr>
+    <th> Car name </th>
+    <th> Car price </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:if="${carList.empty}">
+    <td colspan="2"> No Cars Available </td>
+  </tr>
+  <tr th:each="car : ${carList}">
+    <td><span th:text="${car.name}"> Car name </span></td>
+    <td><span th:text="${car.price}"> Car price </span></td>
+  </tr>
+  </tbody>
+</table>
+
+
+</body>
+</html>

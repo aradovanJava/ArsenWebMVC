@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Adding new car</title>
+</head>
+<body>
+Please add a new car:
+<form th:object="${carCommand}" method="post" th:action="@{/mvc/car}">
+  <div>
+    <label for="name"><b>Name</b></label>
+    <input id="name" type="text" th:field="*{name}">
+    <p th:if="${#fields.hasErrors('name')}" th:errors="${carCommand.name}" />
+  </div>
+
+  <div>
+    <label for="price"><b>Price</b></label>
+    <input id="price" type="number" th:field="*{price}">
+    <p th:if="${#fields.hasErrors('price')}" th:errors="${carCommand.price}" />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>
+</body>
